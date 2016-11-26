@@ -29,7 +29,7 @@ public class BookController {
 	
 	public Book getBookById(Request request, Response response) {
 		
-		final long id = request.attribute("id");
+		final long id = Long.parseLong(request.params("id"));
 		
 		return repository.findById(id)
 				.orElseThrow(RuntimeException::new);

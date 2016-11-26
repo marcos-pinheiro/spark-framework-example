@@ -20,10 +20,10 @@ public class Application implements SparkApplication {
 		
 		port(8080);
 		
-		ApplicationRoutes routes = context.getBean(ApplicationRoutes.class);
-		routes.init();
-		
 		DataSourceConfiguration sourceConfiguration = new DataSourceConfiguration();
 		sourceConfiguration.init();
+		
+		ApplicationRoutes routes = context.getBean(ApplicationRoutes.class);
+		routes.init();
 	}
 }
